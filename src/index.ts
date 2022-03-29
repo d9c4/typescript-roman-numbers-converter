@@ -24,6 +24,7 @@ export function toRoman(x: number): string {
   } else {
     i = 0;
     let toReturn: string = '';
+    x = Math.floor(x);
     while (x > 0) {
       romanNumber = BaseNumbers[i];
       if (Math.floor(x / romanNumber.num) === 0) {
