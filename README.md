@@ -32,3 +32,28 @@ let a_2 = -12
 r = toRoman(a_2); //r is now "" due to limitations
 </code>
 </pre>
+
+### toArabic
+
+Converts the given **string** into a **number** that represents the same value in arabic notation.
+
+<pre>
+<code>
+let a: number;
+let r: string;
+
+r = "XXXII"
+a = toArabic(a); //a is now equal to 32
+</code>
+</pre>
+
+### isRoman
+
+Returns true if the given **string** is a valid written roman number
+
+<pre>
+<code>
+let b = isRoman("MCM"); //b is true
+let b_2 = isRoman("ABC"); //b_2 is false
+</code>
+</pre>
