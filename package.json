@@ -1,6 +1,6 @@
 {
   "name": "typescript-roman-numbers-converter",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "TypeScript package that converts arabic number to roman notation",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
