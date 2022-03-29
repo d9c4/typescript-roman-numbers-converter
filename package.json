@@ -1,13 +1,16 @@
 {
   "name": "typescript-roman-numbers-converter",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "TypeScript package that converts arabic number to roman notation",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint"
   },
   "author": "Davide Cifariello <davide.cifariello@gmail.com> (https://github.com/d9c4)",
   "keywords": [
