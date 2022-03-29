@@ -37,3 +37,34 @@ export function toRoman(x: number): string {
     return toReturn;
   }
 }
+
+export function toArabic(x: string): number | null {
+  let romanNumeral = x.toUpperCase();
+  if (!isRoman(romanNumeral)) {
+    return null;
+  }
+  let result = 0;
+
+  let i = 0;
+
+  while (romanNumeral.length > 0 && i < BaseNumbers.length) {
+    const romanNumber = BaseNumbers[i];
+    if (romanNumeral.startsWith(romanNumber.str)) {
+      result += romanNumber.num;
+      romanNumeral = romanNumeral.substring(romanNumber.str.length);
+    } else {
+      i++;
+    }
+  }
+
+  if (romanNumeral.length > 0) {
+    return null;
+  }
+
+  return result;
+}
+
+export function isRoman(x: string): boolean {
+  const regex = new RegExp('^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$');
+  return regex.test(x);
+}
