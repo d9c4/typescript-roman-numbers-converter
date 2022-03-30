@@ -68,3 +68,38 @@ export function isRoman(x: string): boolean {
   const regex = new RegExp('^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$');
   return regex.test(x);
 }
+
+export function toRomanLarge(x: number): RomanNumber {
+  const toReturn: RomanNumber = new RomanNumber(0, '');
+  toReturn.num = x;
+  x = Math.floor(x);
+
+  let xString: string = x.toString();
+
+  // tslint:disable-next-line:radix
+  toReturn.baseUnits = parseInt(xString.substring(xString.length - 3, xString.length));
+  xString = xString.substring(0, xString.length - 3);
+
+  // tslint:disable-next-line:radix
+  toReturn.thousands = parseInt(xString.substring(0, xString.length));
+
+  // future impl
+  // xString = xString.substring(0, xString.length - 3);
+  // // tslint:disable-next-line:radix
+  // toReturn.million = parseInt(xString.substring(xString.length - 3, xString.length));
+
+  toReturn.str = '';
+  // future impl
+  // if(toReturn.million !== 0){
+  //   toReturn.str = toReturn.str+'__'+ toRoman(toReturn.million);
+  // }
+  if (toReturn.thousands !== 0) {
+    toReturn.str = toReturn.str + '_' + toRoman(toReturn.thousands);
+  }
+  toReturn.str = toReturn.str + '_' + toRoman(toReturn.baseUnits);
+  return toReturn;
+}
+
+export function toRomanLargeStr(x: number): string {
+  return toRomanLarge(x).str;
+}
