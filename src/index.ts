@@ -94,7 +94,7 @@ export function toRomanLarge(x: number): RomanNumber {
   //   toReturn.str = toReturn.str+'__'+ toRoman(toReturn.million);
   // }
   if (toReturn.thousands !== 0) {
-    toReturn.str = toReturn.str + '_' + toRoman(toReturn.thousands);
+    toReturn.str = '('+toReturn.str + '_' + toRoman(toReturn.thousands)+')';
   }
   toReturn.str = toReturn.str + toRoman(toReturn.baseUnits);
   return toReturn;
