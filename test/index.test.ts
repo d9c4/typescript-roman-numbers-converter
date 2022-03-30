@@ -20,9 +20,9 @@ describe('testing index file', () => {
         expect(isRoman('XXXII')).toEqual(true);
     });
     test('converts 1350021 from arabic number format to roman number expecting _MCCCLXXI', () => {
-        expect(toRomanLargeStr(1350021)).toMatch('_MCCCLXXI');
+        expect(toRomanLargeStr(1350021)).toMatch('(_MCCCL)XXI');
     });
     test('converts 1350021 from arabic number format to roman number expecting _MCCCLXXI', () => {
-        expect(toRomanLarge(1350021).str).toMatch('_MCCCLXXI');
+        expect(toRomanLarge(1350021).str).toMatch('(_MCCCL)XXI');
     });
 });
