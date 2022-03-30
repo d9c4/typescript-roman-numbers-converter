@@ -1,4 +1,4 @@
-import { isRoman, toArabic, toRoman } from '../src';
+import { isRoman, toArabic, toRoman, toRomanLarge, toRomanLargeStr } from '../src';
 
 describe('testing index file', () => {
     test('converts 32 from arabic number format to roman number expecting XXXII', () => {
@@ -18,5 +18,11 @@ describe('testing index file', () => {
     });
     test('checks if the roman number XXXII is written correctly expecting true', () => {
         expect(isRoman('XXXII')).toEqual(true);
+    });
+    test('converts 1350021 from arabic number format to roman number expecting _MCCCLXXI', () => {
+        expect(toRomanLargeStr(1350021)).toMatch('_MCCCLXXI');
+    });
+    test('converts 1350021 from arabic number format to roman number expecting _MCCCLXXI', () => {
+        expect(toRomanLarge(1350021).str).toMatch('_MCCCLXXI');
     });
 });
