@@ -9,8 +9,8 @@
     "test": "jest",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "prepublishOnly" : "npm test && npm run lint",
-    "preversion" : "npm run lint"
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint"
   },
   "author": "Davide Cifariello <davide.cifariello@gmail.com> (https://github.com/d9c4)",
   "keywords": [
@@ -30,9 +30,14 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.6.3"
   },
-  "files": ["lib/**/*"],
+  "files": [
+    "lib/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/d9c4/typescript-roman-numbers-converter"
+  },
+  "dependencies": {
+    "@types/node": "^18.15.11"
   }
 }
